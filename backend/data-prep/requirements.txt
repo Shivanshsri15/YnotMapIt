@@ -1,0 +1,2 @@
+# Offline road-network prep only (not used by NestJS at runtime).
+osmnx>=2.0,<3
