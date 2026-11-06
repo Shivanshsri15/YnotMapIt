@@ -1,0 +1,25 @@
+node_modules
+dist
+coverage
+.nyc_output
+.git
+.gitignore
+*.md
+.env
+.env.*
+*.tsbuildinfo
+.temp
+.tmp
+
+# Python prep tooling is not needed inside the API image
+data-prep/.venv
+data-prep/cache
+data-prep/__pycache__
+**/__pycache__
+*.pyc
+
+# Keep tests out of the production image context
+test
+**/*.spec.ts
+vitest.config.ts
+vitest.config.e2e.ts

@@ -108,15 +108,16 @@ cd data-prep
 cd ..
 ```
 
-#### 1) Add a Dockerfile (once the file exists in this repo)
+#### 1) Build the Docker image
 
-From `backend/`:
+From `backend/` (requires `data/noida-drive.json` on disk):
 
 ```powershell
+cd d:\YnotMapIt\backend
 docker build -t ynotmapit-backend:local .
 ```
 
-Expected Dockerfile behaviour (when added): multi-stage `npm ci` → `nest build` → `node dist/main`, graph at `/app/data/noida-drive.json`.
+Image stages: `npm ci` → `nest build` → slim runtime with `dist/` + graph at `/app/data/noida-drive.json`.
 
 #### 2) Run the API container locally
 
